@@ -1,6 +1,7 @@
 {
   "name": "websocket-nodejs-php",
   "version": "0.1.0",
+  "author": "Songonha <songonha@gmail.com>",
   "description": "Websocket connection with Client & Server by Songonha",
   "main": "server.js",
   "scripts": {
@@ -11,12 +12,7 @@
   },
   "devDependencies": {
   },
-  "homepage": "https://github.com/songonha",
-  "author": {
-    "name": "Songonha",
-    "email": "songonha@gmail.com",
-    "url": "https://my-story.songonha.com"
-  },
+  "homepage": "https://my-story.songonha.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/songonha"
