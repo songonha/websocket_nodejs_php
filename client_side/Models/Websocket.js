@@ -1,4 +1,5 @@
-
+function ($) {
+    'use strict'
 new function (n) {
     this.socket = '';
     this.start = function (ws) {
@@ -24,5 +25,8 @@ new function (n) {
         
     }
   
-    n.dn = this;
+    n.tt = this;
+}(window, document);
+
+    
 }(window, document);
