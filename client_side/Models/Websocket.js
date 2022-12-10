@@ -1,4 +1,4 @@
-import WebSocket from 'ws';
+
 
 const ws = new WebSocket('ws://10.148.0.6:2004/');
 
