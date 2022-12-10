@@ -14,6 +14,9 @@
   
 ?>
  <!-- Websocket -->
-<script src="Models/Websocket.js"></script>
+<script src="Models/Websocket.js">
+  var WebsocketUrl = 'ws://10.148.0.6:2004';
+  tt.start(WebsocketUrl);  
+</script>
 <!--  End -->
 </html>
