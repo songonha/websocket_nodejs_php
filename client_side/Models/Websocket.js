@@ -1,32 +1,22 @@
-function ($) {
-    'use strict'
-new function (n) {
-    this.socket = '';
-    this.start = function (ws) {
-        this.socket = new WebSocket(ws);
-        this.socket.onopen = function (evt) {
-            console.log('connect to server');
-  
-        }
-        this.socket.onclose = function (data) {
-            console.log('Close to server');
-            $.notify("Mất kết nối tới máy chủ... Đang chờ kết nối lại.", "error");
-            setTimeout(function () {
-                location.reload();
-            }, 3000);
-        }
-        this.socket.onerror = function (data) {
-            console.log('khong the ket noi');
-            $.notify("Mất kết nối tới máy chủ... Đang chờ kết nối lại.", "error");
-            setTimeout(function () {
-                location.reload();
-            }, 3000);
-        }
-        
-    }
-  
-    n.tt = this;
-}(window, document);
+import WebSocket from 'ws';
 
+const ws = new WebSocket('ws://10.148.0.6:2004/');
+
+ws.on('open', function open() {
+  console.log('connected');
+  ws.send(Date.now());
+});
+
+ws.on('close', function close() {
+  console.log('disconnected');
+});
+
+ws.on('message', function message(data) {
+  console.log(`Round-trip time: ${Date.now() - data} ms`);
+
+  setTimeout(function timeout() {
+    ws.send(Date.now());
+  }, 500);
+});
     
-}(window, document);
+
